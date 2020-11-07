@@ -1,0 +1,126 @@
+2020-11-07 15:56:12.611 CET [13478] LOG:  starting PostgreSQL 13.0 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 12.0.0 (clang-1200.0.32.2), 64-bit
+2020-11-07 15:56:12.612 CET [13478] LOG:  listening on IPv6 address "::1", port 5432
+2020-11-07 15:56:12.612 CET [13478] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-11-07 15:56:12.613 CET [13478] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-11-07 15:56:12.616 CET [13479] LOG:  database system was shut down at 2020-11-07 15:56:01 CET
+2020-11-07 15:56:12.619 CET [13478] LOG:  database system is ready to accept connections
+2020-11-07 15:56:49.031 CET [13489] FATAL:  role "test" does not exist
+2020-11-07 15:58:32.663 CET [13478] LOG:  received fast shutdown request
+2020-11-07 15:58:32.663 CET [13478] LOG:  aborting any active transactions
+2020-11-07 15:58:32.664 CET [13478] LOG:  background worker "logical replication launcher" (PID 13485) exited with exit code 1
+2020-11-07 15:58:32.665 CET [13480] LOG:  shutting down
+2020-11-07 15:58:32.670 CET [13478] LOG:  database system is shut down
+2020-11-07 16:01:08.752 CET [13550] LOG:  starting PostgreSQL 13.0 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 12.0.0 (clang-1200.0.32.2), 64-bit
+2020-11-07 16:01:08.753 CET [13550] LOG:  listening on IPv6 address "::1", port 5432
+2020-11-07 16:01:08.753 CET [13550] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-11-07 16:01:08.754 CET [13550] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-11-07 16:01:08.757 CET [13551] LOG:  database system was shut down at 2020-11-07 16:01:01 CET
+2020-11-07 16:01:08.760 CET [13550] LOG:  database system is ready to accept connections
+2020-11-07 16:01:51.335 CET [13568] FATAL:  database "test" does not exist
+2020-11-07 16:04:26.556 CET [13550] LOG:  received fast shutdown request
+2020-11-07 16:04:26.557 CET [13550] LOG:  aborting any active transactions
+2020-11-07 16:04:26.558 CET [13550] LOG:  background worker "logical replication launcher" (PID 13557) exited with exit code 1
+2020-11-07 16:04:26.558 CET [13552] LOG:  shutting down
+2020-11-07 16:04:26.569 CET [13550] LOG:  database system is shut down
+2020-11-07 16:09:21.430 CET [13639] LOG:  starting PostgreSQL 13.0 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 12.0.0 (clang-1200.0.32.2), 64-bit
+2020-11-07 16:09:21.431 CET [13639] LOG:  listening on IPv6 address "::1", port 5432
+2020-11-07 16:09:21.431 CET [13639] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-11-07 16:09:21.432 CET [13639] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-11-07 16:09:21.435 CET [13640] LOG:  database system was shut down at 2020-11-07 16:08:57 CET
+2020-11-07 16:09:21.438 CET [13639] LOG:  database system is ready to accept connections
+2020-11-07 16:09:29.513 CET [13653] FATAL:  role "test" does not exist
+2020-11-07 16:09:42.261 CET [13656] FATAL:  lock file "postmaster.pid" already exists
+2020-11-07 16:09:42.261 CET [13656] HINT:  Is another postmaster (PID 13639) running in data directory "/usr/local/var/postgres"?
+2020-11-07 16:11:03.433 CET [13680] ERROR:  role "mint" already exists
+2020-11-07 16:11:03.433 CET [13680] STATEMENT:  CREATE ROLE mint NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN;
+2020-11-07 16:28:48.218 CET [13783] ERROR:  permission denied to create extension "uuid-ossp"
+2020-11-07 16:28:48.218 CET [13783] HINT:  Must have CREATE privilege on current database to create this extension.
+2020-11-07 16:28:48.218 CET [13783] STATEMENT:  CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+2020-11-07 16:28:48.259 CET [13783] ERROR:  function uuid_generate_v4() does not exist
+2020-11-07 16:28:48.259 CET [13783] HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2020-11-07 16:28:48.259 CET [13783] STATEMENT:  ALTER TABLE "user" ADD "id" uuid NOT NULL DEFAULT uuid_generate_v4()
+2020-11-07 16:29:17.263 CET [13792] FATAL:  database "mint" does not exist
+2020-11-07 16:29:53.238 CET [13795] ERROR:  syntax error at or near "show" at character 21
+2020-11-07 16:29:53.238 CET [13795] STATEMENT:  SHOW rds.extensions
+	show rds.extensions;
+2020-11-07 16:30:11.233 CET [13795] ERROR:  unrecognized configuration parameter "rds.extensions"
+2020-11-07 16:30:11.233 CET [13795] STATEMENT:  SHOW rds.extensions;
+2020-11-07 19:36:32.880 CET [14737] ERROR:  column "username" of relation "user" contains null values
+2020-11-07 19:36:32.880 CET [14737] STATEMENT:  ALTER TABLE "user" ADD "username" character varying NOT NULL
+2020-11-07 19:40:09.348 CET [14782] FATAL:  database "mint" does not exist
+2020-11-07 19:41:42.822 CET [14810] ERROR:  column "username" of relation "user" contains null values
+2020-11-07 19:41:42.822 CET [14810] STATEMENT:  ALTER TABLE "user" ADD "username" character varying NOT NULL
+2020-11-07 19:44:24.977 CET [14846] ERROR:  column "username" of relation "user" contains null values
+2020-11-07 19:44:24.977 CET [14846] STATEMENT:  ALTER TABLE "user" ADD "username" character varying NOT NULL
+2020-11-07 19:44:56.818 CET [14854] ERROR:  column "username" of relation "user" contains null values
+2020-11-07 19:44:56.818 CET [14854] STATEMENT:  ALTER TABLE "user" ADD "username" character varying NOT NULL
+2020-11-07 19:54:33.346 CET [14966] ERROR:  column "username" of relation "user" contains null values
+2020-11-07 19:54:33.346 CET [14966] STATEMENT:  ALTER TABLE "user" ADD "username" character varying NOT NULL
+2020-11-07 19:54:39.084 CET [14971] ERROR:  column "username" of relation "user" contains null values
+2020-11-07 19:54:39.084 CET [14971] STATEMENT:  ALTER TABLE "user" ADD "username" character varying NOT NULL
+2020-11-07 20:02:56.366 CET [15094] ERROR:  column "username" of relation "user" contains null values
+2020-11-07 20:02:56.366 CET [15094] STATEMENT:  ALTER TABLE "user" ADD "username" character varying NOT NULL
+2020-11-07 20:15:27.286 CET [15453] ERROR:  column "username" of relation "user" contains null values
+2020-11-07 20:15:27.286 CET [15453] STATEMENT:  ALTER TABLE "user" ADD "username" character varying NOT NULL
+2020-11-07 20:27:44.891 CET [15613] ERROR:  column User.username does not exist at character 34
+2020-11-07 20:27:44.891 CET [15613] STATEMENT:  SELECT "User"."id" AS "User_id", "User"."username" AS "User_username", "User"."password" AS "User_password", "User"."role" AS "User_role", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt" FROM "user" "User" WHERE "User"."username" = $1 LIMIT 1
+2020-11-07 20:28:24.563 CET [15617] ERROR:  column User.username does not exist at character 34
+2020-11-07 20:28:24.563 CET [15617] STATEMENT:  SELECT "User"."id" AS "User_id", "User"."username" AS "User_username", "User"."password" AS "User_password", "User"."role" AS "User_role", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt" FROM "user" "User" WHERE "User"."username" = $1 LIMIT 1
+2020-11-07 20:30:25.869 CET [15635] ERROR:  column User.username does not exist at character 34
+2020-11-07 20:30:25.869 CET [15635] STATEMENT:  SELECT "User"."id" AS "User_id", "User"."username" AS "User_username", "User"."password" AS "User_password", "User"."role" AS "User_role", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt" FROM "user" "User" WHERE "User"."username" = $1 LIMIT 1
+2020-11-07 20:31:13.700 CET [15650] ERROR:  column "username" of relation "user" does not exist at character 26
+2020-11-07 20:31:13.700 CET [15650] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 20:35:08.470 CET [15690] ERROR:  column "username" of relation "user" does not exist at character 26
+2020-11-07 20:35:08.470 CET [15690] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 20:41:39.425 CET [15773] ERROR:  column "username" of relation "user" does not exist at character 26
+2020-11-07 20:41:39.425 CET [15773] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 20:43:28.855 CET [16238] ERROR:  column "username" of relation "user" does not exist at character 26
+2020-11-07 20:43:28.855 CET [16238] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 20:45:25.849 CET [16265] ERROR:  syntax error at or near "user" at character 12
+2020-11-07 20:45:25.849 CET [16265] STATEMENT:  DROP TABLE user
+	DROP TABLE user;
+2020-11-07 20:51:26.535 CET [16333] ERROR:  relation "user" does not exist at character 13
+2020-11-07 20:51:26.535 CET [16333] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 20:52:57.179 CET [16362] ERROR:  relation "user" does not exist at character 13
+2020-11-07 20:52:57.179 CET [16362] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 21:34:41.798 CET [17078] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 21:34:41.798 CET [17078] DETAIL:  Key (username)=(tyo wibowowww) already exists.
+2020-11-07 21:34:41.798 CET [17078] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 21:35:29.357 CET [17083] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 21:35:29.357 CET [17083] DETAIL:  Key (username)=(tyo wibowowww) already exists.
+2020-11-07 21:35:29.357 CET [17083] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 21:36:07.735 CET [17090] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 21:36:07.735 CET [17090] DETAIL:  Key (username)=(tyo wibowowww) already exists.
+2020-11-07 21:36:07.735 CET [17090] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 21:36:50.470 CET [17094] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 21:36:50.470 CET [17094] DETAIL:  Key (username)=(tyo wibowowww) already exists.
+2020-11-07 21:36:50.470 CET [17094] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 21:37:00.685 CET [17094] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 21:37:00.685 CET [17094] DETAIL:  Key (username)=(tyo wibowowww) already exists.
+2020-11-07 21:37:00.685 CET [17094] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 21:52:39.403 CET [17203] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 21:52:39.403 CET [17203] DETAIL:  Key (username)=(tyo wibowowww) already exists.
+2020-11-07 21:52:39.403 CET [17203] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 22:00:45.119 CET [17291] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 22:00:45.119 CET [17291] DETAIL:  Key (username)=(tyo wibowowwwww) already exists.
+2020-11-07 22:00:45.119 CET [17291] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 22:05:06.502 CET [17311] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 22:05:06.502 CET [17311] DETAIL:  Key (username)=(aefgsrgasrgaerg) already exists.
+2020-11-07 22:05:06.502 CET [17311] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 22:07:02.949 CET [17334] ERROR:  relation "user" does not exist at character 13
+2020-11-07 22:07:02.949 CET [17334] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 22:07:41.887 CET [17344] ERROR:  relation "user" does not exist at character 13
+2020-11-07 22:07:41.887 CET [17344] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 22:08:12.927 CET [17359] ERROR:  relation "user" does not exist at character 13
+2020-11-07 22:08:12.927 CET [17359] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 22:14:21.591 CET [17406] ERROR:  relation "user" does not exist at character 13
+2020-11-07 22:14:21.591 CET [17406] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 22:18:20.440 CET [17453] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 22:18:20.440 CET [17453] DETAIL:  Key (username)=(aefgsrgasrgaerg) already exists.
+2020-11-07 22:18:20.440 CET [17453] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 22:24:25.013 CET [17487] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 22:24:25.013 CET [17487] DETAIL:  Key (username)=(pooooooooop) already exists.
+2020-11-07 22:24:25.013 CET [17487] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-07 22:25:36.149 CET [17492] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
+2020-11-07 22:25:36.149 CET [17492] DETAIL:  Key (username)=(pooooooooop) already exists.
+2020-11-07 22:25:36.149 CET [17492] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
