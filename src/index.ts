@@ -1,3 +1,4 @@
+require('dotenv').config()
 import "reflect-metadata";
 import {createConnection} from "typeorm";
 import * as express from "express";
@@ -16,35 +17,26 @@ createConnection().then(async connection => {
 		app.use(helmet());
     app.use(bodyParser.json());
 		app.use("/", routes);
-    // register express routes from defined application routes
-    // Routes.forEach(route => {
-    //     (app as any)[route.method](route.route, (req: Request, res: Response, next: Function) => {
-    //         const result = (new (route.controller as any))[route.action](req, res, next);
-    //         if (result instanceof Promise) {
-    //             result.then(result => result !== null && result !== undefined ? res.send(result) : undefined);
-		//
-    //         } else if (result !== null && result !== undefined) {
-    //             res.json(result);
-    //         }
-    //     });
-    // });
-
-    // setup express app here
-    // ...
 
     // start express server
     app.listen(3000);
 
-    // insert new users for test
-	// const userRepository = connection.getRepository('User');
-	// if (!await userRepository.findOne({ firstName: "Tyo" })) {
-	// 	console.log('Database Empty! Adding Tyo.')
-	// 	await connection.manager.save(connection.manager.create(User, {
-	// 		firstName: "Tyo",
-	// 		age: 27
-	// 	}));
-	// }
+
 
     console.log("Express server has started on port 3000.");
+    if (process.env.NODE_ENV === "dev") {
+
+	    // insert new users for test
+	    const userRepository = connection.getRepository('User');
+	    if (!await userRepository.findOne({ username: "TyoWibowow" })) {
+	    	console.log('Database Empty! Adding Tyo.')
+	    	await connection.manager.save(connection.manager.create(User, {
+	    		username: "TyoWibowow",
+			    password: "test",
+	    		role: "ADMIN"
+	    	}));
+	    }
+
+    }
 
 }).catch(error => console.log(error));

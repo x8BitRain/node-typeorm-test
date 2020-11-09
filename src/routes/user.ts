@@ -12,7 +12,7 @@ router.get("/", [checkJWT, checkRole(["ADMIN"])], UserController.listAll);
 router.get(
 	"/:id",
 	[checkJWT, checkRole(["ADMIN"])],
-	UserController.getOneById
+	UserController.getUser
 );
 
 // Create a new user

@@ -124,3 +124,6 @@
 2020-11-07 22:25:36.149 CET [17492] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
 2020-11-07 22:25:36.149 CET [17492] DETAIL:  Key (username)=(pooooooooop) already exists.
 2020-11-07 22:25:36.149 CET [17492] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-09 23:34:29.777 CET [40016] ERROR:  null value in column "username" of relation "user" violates not-null constraint
+2020-11-09 23:34:29.777 CET [40016] DETAIL:  Failing row contains (17b58f9b-ddd9-4fac-82ce-70af4f265166, null, null, null, 2020-11-09 23:34:29.749111, 2020-11-09 23:34:29.749111).
+2020-11-09 23:34:29.777 CET [40016] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"

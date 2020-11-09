@@ -15,7 +15,7 @@ class UserController {
 		res.send(users);
 	}
 
-	static getOneById = async (req: Request, res: Response) => {
+	static getUser = async (req: Request, res: Response) => {
 		// ID comes from URL
 		const id = req.params.id;
 		// Get user from DB
