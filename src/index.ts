@@ -22,10 +22,9 @@ createConnection().then(async connection => {
     app.listen(3000);
 
 
-
     console.log("Express server has started on port 3000.");
-    if (process.env.NODE_ENV === "dev") {
 
+    if (process.env.NODE_ENV === "dev") {
 	    // insert new users for test
 	    const userRepository = connection.getRepository('User');
 	    if (!await userRepository.findOne({ username: "TyoWibowow" })) {
@@ -33,10 +32,9 @@ createConnection().then(async connection => {
 	    	await connection.manager.save(connection.manager.create(User, {
 	    		username: "TyoWibowow",
 			    password: "test",
-	    		role: "ADMIN"
+	    		role: "admin"
 	    	}));
 	    }
-
     }
 
 }).catch(error => console.log(error));

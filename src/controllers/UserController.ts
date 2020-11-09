@@ -3,6 +3,7 @@ import { getRepository } from "typeorm";
 import { validate } from "class-validator";
 import { User } from "../entity/User";
 import bilang from "../utils/bilang";
+const isDev = process.env["NODE_ENV"]
 
 class UserController {
 
@@ -33,12 +34,13 @@ class UserController {
 
 	static createUser = async (req: Request, res: Response) => {
 		// Get parameters from request body
+
 		let { username, password, role } = req.body;
 		let user = new User();
 		let savedUser;
 		user.username = username;
 		user.password = password;
-		user.role = role || "NORMAL";
+		isDev ? user.role = role : user.role = "normal"; // Only allow adding admins over API call on dev env
 
 		// Validate user parameters
 		const errors = await validate(user);
