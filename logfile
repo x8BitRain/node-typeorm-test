@@ -130,3 +130,27 @@
 2020-11-10 00:12:14.471 CET [40862] ERROR:  duplicate key value violates unique constraint "UQ_78a916df40e02a9deb1c4b75edb"
 2020-11-10 00:12:14.471 CET [40862] DETAIL:  Key (username)=(komang) already exists.
 2020-11-10 00:12:14.471 CET [40862] STATEMENT:  INSERT INTO "user"("id", "username", "password", "role", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, DEFAULT, DEFAULT) RETURNING "id", "createdAt", "updatedAt"
+2020-11-10 00:28:29.868 CET [41020] ERROR:  column User.email does not exist at character 34
+2020-11-10 00:28:29.868 CET [41020] STATEMENT:  SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."username" AS "User_username", "User"."password" AS "User_password", "User"."role" AS "User_role", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt" FROM "user" "User" WHERE "User"."username" = $1 LIMIT 1
+2020-11-10 00:29:31.889 CET [41034] ERROR:  column User.email does not exist at character 34
+2020-11-10 00:29:31.889 CET [41034] STATEMENT:  SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."username" AS "User_username", "User"."password" AS "User_password", "User"."role" AS "User_role", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt" FROM "user" "User" WHERE "User"."username" = $1 LIMIT 1
+2020-11-10 00:53:33.413 CET [41291] ERROR:  column User.email does not exist at character 34
+2020-11-10 00:53:33.413 CET [41291] STATEMENT:  SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."username" AS "User_username", "User"."password" AS "User_password", "User"."role" AS "User_role", "User"."settings" AS "User_settings", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt" FROM "user" "User" WHERE "User"."username" = $1 LIMIT 1
+2020-11-10 01:14:12.434 CET [41526] ERROR:  column User.email does not exist at character 34
+2020-11-10 01:14:12.434 CET [41526] STATEMENT:  SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."username" AS "User_username", "User"."password" AS "User_password", "User"."role" AS "User_role", "User"."settings" AS "User_settings", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt" FROM "user" "User" WHERE "User"."username" = $1 LIMIT 1
+2020-11-10 01:14:23.450 CET [41529] ERROR:  column User.email does not exist at character 34
+2020-11-10 01:14:23.450 CET [41529] STATEMENT:  SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."username" AS "User_username", "User"."password" AS "User_password", "User"."role" AS "User_role", "User"."settings" AS "User_settings", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt" FROM "user" "User" WHERE "User"."username" = $1 LIMIT 1
+2020-11-10 01:14:24.632 CET [41535] ERROR:  column User.email does not exist at character 34
+2020-11-10 01:14:24.632 CET [41535] STATEMENT:  SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."username" AS "User_username", "User"."password" AS "User_password", "User"."role" AS "User_role", "User"."settings" AS "User_settings", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt" FROM "user" "User" WHERE "User"."username" = $1 LIMIT 1
+2020-11-10 01:21:57.860 CET [41664] ERROR:  column "email" of relation "user" contains null values
+2020-11-10 01:21:57.860 CET [41664] STATEMENT:  ALTER TABLE "user" ADD "email" character varying NOT NULL
+2020-11-10 01:23:23.693 CET [41684] ERROR:  column "email" of relation "user" contains null values
+2020-11-10 01:23:23.693 CET [41684] STATEMENT:  ALTER TABLE "user" ADD "email" character varying NOT NULL
+2020-11-10 01:23:54.183 CET [41694] ERROR:  relation "user" does not exist at character 13
+2020-11-10 01:23:54.183 CET [41694] STATEMENT:  INSERT INTO "user"("id", "email", "username", "password", "role", "settings", "createdAt", "updatedAt") VALUES (DEFAULT, DEFAULT, $1, $2, $3, DEFAULT, DEFAULT, DEFAULT) RETURNING "id", "settings", "createdAt", "updatedAt"
+2020-11-10 01:26:50.693 CET [41747] ERROR:  relation "user" does not exist at character 13
+2020-11-10 01:26:50.693 CET [41747] STATEMENT:  INSERT INTO "user"("id", "email", "username", "password", "role", "settings", "createdAt", "updatedAt") VALUES (DEFAULT, DEFAULT, $1, $2, $3, DEFAULT, DEFAULT, DEFAULT) RETURNING "id", "settings", "createdAt", "updatedAt"
+2020-11-10 01:27:42.704 CET [41773] ERROR:  relation "user" does not exist at character 13
+2020-11-10 01:27:42.704 CET [41773] STATEMENT:  INSERT INTO "user"("id", "email", "username", "password", "role", "settings", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, $4, DEFAULT, DEFAULT, DEFAULT) RETURNING "id", "settings", "createdAt", "updatedAt"
+2020-11-10 01:29:27.810 CET [41787] ERROR:  relation "user" does not exist at character 13
+2020-11-10 01:29:27.810 CET [41787] STATEMENT:  INSERT INTO "user"("id", "email", "username", "password", "role", "settings", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, $4, DEFAULT, DEFAULT, DEFAULT) RETURNING "id", "settings", "createdAt", "updatedAt"

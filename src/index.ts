@@ -27,13 +27,15 @@ createConnection().then(async connection => {
     if (process.env.NODE_ENV === "dev") {
 	    // insert new users for test
 	    const userRepository = connection.getRepository('User');
-	    if (!await userRepository.findOne({ username: "TyoWibowow" })) {
-	    	console.log('Database Empty! Adding Tyo.')
+	    if (!await userRepository.findOne({ username: "merukimura" })) {
+	    	console.log('Database Empty! Adding Meru.')
 	    	await connection.manager.save(connection.manager.create(User, {
-	    		username: "TyoWibowow",
+	    		email: "meru@btr.pm",
+	    		username: "merukimura",
 			    password: "test",
 	    		role: "admin"
 	    	}));
+		    console.log("Meru Added");
 	    }
     }
 
