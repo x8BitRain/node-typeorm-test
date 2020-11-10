@@ -11,7 +11,7 @@ class UserController {
 		// Get users from database
 		const userRepository = getRepository(User);
 		const users = await userRepository.find({
-			select: ["id", "username", "role"] // Specify exactly what we respond with because otherwise it will also send passwords
+			select: ["id", "email", "username", "role", "settings"] // Specify exactly what we respond with because otherwise it will also send passwords
 		});
 		res.send(users);
 	}
@@ -24,10 +24,12 @@ class UserController {
 		let user: User;
 		try {
 			user = await userRepository.findOneOrFail(id, {
-				select: ["id", "username", "role"]
+				select: ["id", "email", "username", "role", "settings"]
 			});
 			} catch (error) {
-				res.status(404).send("User not found");
+				res.status(404).send({
+					message: "User not found"
+				});
 			}
 			res.status(200).send(user);
 		};
@@ -35,9 +37,10 @@ class UserController {
 	static createUser = async (req: Request, res: Response) => {
 		// Get parameters from request body
 
-		let { username, password, role } = req.body;
+		let { email, username, password, role } = req.body;
 		let user = new User();
 		let savedUser;
+		user.email = email;
 		user.username = username;
 		user.password = password;
 		isDev ? user.role = role : user.role = "normal"; // Only allow adding admins over API call on dev env
@@ -77,7 +80,7 @@ class UserController {
 		const id = req.params.id;
 
 		// Values from body
-		const { username, role } = req.body;
+		const { email, username, role } = req.body;
 
 		// Try to find user in DB
 		const userRepository = getRepository(User);
@@ -86,11 +89,14 @@ class UserController {
 			user = await userRepository.findOneOrFail(id);
 		} catch(error) {
 			// If user not found, respond with 404
-			res.status(404).send("User not found");
+			res.status(404).send({
+				message: "User not found"
+			});
 			return
 		}
 
 		// Validate new values on model
+		user.email = email;
 		user.username = username;
 		user.role = role;
 		const errors = await validate(user);
@@ -103,10 +109,12 @@ class UserController {
 		try {
 			await userRepository.save(user);
 		} catch (e) {
-			res.status(409).send("Username already in use");
+			res.status(409).send("Email already in use");
 		}
 		// Home at last, send 204 for success.
-		res.status(204).send("User successfully updated");
+		res.status(200).send({
+			message:"User updated!"
+		});
 	}
 
 	static deleteUser = async (req: Request, res: Response) => {
@@ -117,12 +125,16 @@ class UserController {
 		try {
 			user = await userRepository.findOneOrFail(id);
 		} catch (error) {
-			res.status(404).send("User not found");
+			res.status(404).send({
+				message: "User not found"
+			});
 			return;
 		}
-		userRepository.delete(id);
-
-		res.status(204).send("User successfully deleted");
+		await userRepository.delete(id);
+		bilang("red", `User ${user.email} was deleted.`)
+		res.status(200).send({
+			message: "User successfully deleted"
+		});
 	};
 
 }
